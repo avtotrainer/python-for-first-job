@@ -1,10 +1,10 @@
 """
-Базовый синтаксис
+ᲡᲐᲑᲐᲖᲝ ᲡᲘᲜᲢᲐᲥᲡᲘ
 """
 import typing
 
 
-# основные типы и структуры
+# ᲫᲘᲠᲘᲗᲐᲓᲘ ᲢᲘᲞᲔᲑᲘ ᲓᲐ ᲡᲢᲠᲣᲥᲢᲣᲠᲔᲑᲘ
 types = [
     ...,
     None,
@@ -20,7 +20,7 @@ types = [
 ]
 
 
-# основные операторы
+# ᲫᲘᲠᲘᲗᲐᲓᲘ ᲝᲞᲔᲠᲐᲢᲝᲠᲔᲑᲘ
 _ = 1 + 2
 _ = 1 - 2
 _ = 1 * 2
@@ -33,7 +33,7 @@ _ = 1 or 2
 _ = 1 > 2 | 1 >= 2 | 1 < 2 | 1 <= 2
 
 
-# цикл for
+# ᲪᲘᲙᲚᲘ for
 for _ in types:
     pass
 
@@ -43,25 +43,25 @@ else:
     pass
 
 
-# Comprehensions
+# Comprehensions კომპაქტური ფორმები - კომპრეჰენზია
 a = [i for i in types]
 b = (i for i in types)
 c = {i for i in types if isinstance(i, typing.Hashable)}
 d = {str(i): i for i in types}
 
 
-# Присвоение, распаковка, срезы
+# მინიჭება, გამოშლა, კვეთები  
 e, *f, g = types
 h = [*f]
 _ = [1, 2, 3][:]
 _ = {**{}}
 
 
-# Утверждение assert
+# განაცხადი assert
 assert h, 'test'
 
 
-# цикл while
+# ციკლი while
 while a:
     a.pop()
 
@@ -71,7 +71,7 @@ else:
     pass
 
 
-# Функции
+# ფუნქციები
 def func(text: str, space: str, action: typing.Callable) -> None:
     if not text:
         return
@@ -81,11 +81,11 @@ def func(text: str, space: str, action: typing.Callable) -> None:
     print(space + action(text))
 
 
-# lambda функции
+# lambda ფუნქციები
 func('*' * 11, '', lambda text: ' '.join(i for i in text))
 
 
-# Декораторы
+# დეკორატორები
 def decorator(multiplier: int):
 
     def dec(func: typing.Callable):
@@ -115,7 +115,7 @@ def f(num: int) -> int:
 qwe = [*f(1)]
 
 
-# Условия
+# პირობები
 if i := d.get(''):
     pass
 elif not (q := d.get(1)):
@@ -131,7 +131,7 @@ else:
 #         pass
 
 
-# Исключения и их обработка
+# გამონაკლისები და მისი დამუშავება
 try:
     1 / 0
 except ZeroDivisionError as exc:
@@ -142,7 +142,7 @@ finally:
     ...
 
 
-# Классы
+# კლასები
 class A:
 
     class_attrs = None
