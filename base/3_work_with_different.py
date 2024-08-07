@@ -1,13 +1,13 @@
 """
-Работа с разными форматами:
-- работа со временем и датами
-- работа с Decimal
-- работа с регулярными выражениями
-- работа с файлами (например csv)
-- Работа с вводом/выводом
-- Работа с uuid
-- Работа с os
-- Работа с кодировками
+განსხვავებულ ფორმატებთან მუშაობა:
+- დროსთან და თარიღთან მუშაობა
+- მუშაობა Decimal-თან
+- რეგულარულ გამოსახულებებთან მუშაობა
+- ფაილებთან მუშაობა (მაგალითად csv)
+- შეტანა/გამოტანის მოქმედები
+- uuid-თან მუშაობა
+- os-თან მუშაობა
+- კოდირებებთან მუშაობა
 """
 import csv
 import datetime
@@ -19,7 +19,7 @@ import time
 import uuid
 
 
-# Даты
+# თარიღები
 today = datetime.date.today()
 yesterday = today - datetime.timedelta(days=1)
 tomorrow = today + datetime.timedelta(days=1)
@@ -33,7 +33,7 @@ timestamp = time.time()
 from_timestamp = datetime.datetime.fromtimestamp(timestamp)
 
 
-# работа с Decimal
+# Decimal-თან მუშაობა
 context = decimal.getcontext()
 context.rounding = decimal.ROUND_DOWN
 
@@ -42,13 +42,13 @@ b = decimal.Decimal(0.3)
 c = b.quantize(decimal.Decimal('.0001'), rounding=decimal.ROUND_UP)
 
 
-# работа с регулярными выражениями
+# რეგულარულ გამოსახულებებთან მუშაობა
 pattern = re.compile(r'^@(\w+)$')
 nicknames = ['@qweqwe', '@@qweqwe', 'qweqwe', 'qwe@qwe']
 valid_nicknames = [i for i in nicknames if re.match(pattern, i)]
 
 
-# Работа с файлами
+# ფაილებთან მუშაობა
 # some_dict = {'qwe': 123}
 # file_name = 'new.json'
 file_name = 'new.csv'
@@ -67,17 +67,17 @@ with open(file_name, 'r') as file:
         print(row['nicknames'], row['length'])
 
 
-# Ввод/вывод
+# შეტანა/გამოტანა
 test = input('test:').split()
 for i in range(10):
     print(*test, sep='(╯ ° □ °) ╯ ┻━┻', end='\n' + '\t' * i,)
 
 
-# Работа с uuid
+# uuid
 uid = uuid.uuid4()
 
 
-# Работа с os
+# os
 path = os.path.join(__file__, 'qweqwe')
 os.getenv('ENV_NAME')
 
